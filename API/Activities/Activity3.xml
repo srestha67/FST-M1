@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e15c5504-61ed-4223-8f00-9825c764d33d" activeEnvironment="Default environment" name="Data Driven Virtualization Sample Project" resourceRoot="" soapui-version="6.0.0" updated="3.46.0 2023-05-11T09:29:01Z" encryptionMode="Not encrypted" projectVersion="" xmlns:con="http://eviware.com/soapui/config">
+    <con:description>Demonstrates how to use a data generator for creating a local virtual service.</con:description>
+    <con:settings>
+        <con:setting id="GeneratableJUnitReport@Style">Multiple Pages</con:setting>
+        <con:setting id="GeneratableJUnitReport@Folder">C:\Users\Sviridov\Desktop\1</con:setting>
+    </con:settings>
+    <con:interface xsi:type="con:RestService" id="fef64602-7bed-45e3-b659-a0fb0fd4e3b2" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8095" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache type="TEXT" rootPart=""/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8095</con:endpoint>
+        </con:endpoints>
+        <con:resource name="" path="/getFlavor" id="ab715508-85e3-4cb6-a9d7-e719cae76c31">
+            <con:settings/>
+            <con:parameters/>
+            <con:method name="Data" id="b5b0cde3-14fb-4315-af8a-0658991b0e82" method="GET">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/xml</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element>xml</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/xml</con:mediaType>
+                    <con:status>404</con:status>
+                    <con:params/>
+                    <con:element>xml</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>500</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:request name="Flavor" id="a2ccad7d-22a7-4c61-82a9-76b783323032" mediaType="application/json">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                    </con:settings>
+                    <con:endpoint>http://localhost:8095</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>http://localhost/</con:originalUri>
+                    <con:credentials>
+                        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:testSuite id="feafeb02-3ecc-405e-8a1c-59c0a24c408a" name="Ice Cream">
+        <con:settings/>
+        <con:savedRecentRuns>1</con:savedRecentRuns>
+        <con:runType>SEQUENTIAL</con:runType>
+        <con:testCase id="1651566e-a3c9-4216-837a-157cd1efec12" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Flavors" searchProperties="true">
+            <con:settings/>
+            <con:savedRecentRuns>1</con:savedRecentRuns>
+            <con:testStep type="VirtRunnerTestStep" name="Start Virtual Service" id="0858e711-41bf-48da-8837-f23cb23f9af5">
+                <con:settings/>
+                <con:config>
+                    <url>localhost</url>
+                    <server>REST Virtual Service - Flavors</server>
+                    <action>run</action>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="restrequest" name="getFlavor" id="31d351d8-c607-450c-ae47-cb46becd73f2">
+                <con:settings/>
+                <con:config service="http://localhost:8095" resourcePath="/getFlavor" methodName="Data" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <con:restRequest name="getFlavor" id="a2ccad7d-22a7-4c61-82a9-76b783323032" mediaType="application/json">
+                        <con:settings>
+                            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                        </con:settings>
+                        <con:endpoint>http://localhost:8095</con:endpoint>
+                        <con:request/>
+                        <con:originalUri>http://localhost/</con:originalUri>
+                        <con:credentials>
+                            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+                            <con:authType>No Authorization</con:authType>
+                        </con:credentials>
+                        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                        <con:parameters/>
+                    </con:restRequest>
+                </con:config>
+            </con:testStep>
+            <con:testStep type="VirtRunnerTestStep" name="Stop Virtual Service" id="c780ca71-d0ee-4694-99cb-3b20b79867ef">
+                <con:settings/>
+                <con:config>
+                    <url>localhost</url>
+                    <server>REST Virtual Service - Flavors</server>
+                    <action>stop</action>
+                </con:config>
+            </con:testStep>
+            <con:properties/>
+            <con:reportParameters/>
+            <con:securityTest id="5a1010c3-546f-4017-8a95-295f93a44bee" name="DataDriven Security" failOnError="false" testCaseId="1651566e-a3c9-4216-837a-157cd1efec12">
+                <con:settings/>
+                <con:properties/>
+                <con:reportParameters/>
+            </con:securityTest>
+            <con:breakPoints>
+                <con:testStepId>0858e711-41bf-48da-8837-f23cb23f9af5</con:testStepId>
+                <con:status>NONE</con:status>
+                <con:properties/>
+            </con:breakPoints>
+        </con:testCase>
+        <con:properties/>
+        <con:reportParameters/>
+    </con:testSuite>
+    <con:restMockService id="e79b97b6-e3ce-410f-bc85-2a29602fa889" port="8095" path="/" host="localhost" name="REST Virtual Service - Flavors">
+        <con:settings/>
+        <con:properties/>
+        <con:constraints>
+            <con:congestion>0</con:congestion>
+            <con:inputBandwidth>125</con:inputBandwidth>
+            <con:outputBandwidth>125</con:outputBandwidth>
+            <con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity>
+            <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+            <con:virtError>
+                <con:start>-1</con:start>
+            </con:virtError>
+        </con:constraints>
+        <con:dataSources>
+            <con:dataSource>
+                <con:dataSource type="Grid">
+                    <con:configuration>
+                        <check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Vanilla&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Chocolate&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Mint Chocolate Chip&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Cookies and Cream&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Cookie Dough&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Guatemalan Ripple&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Butter Pecan&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Peanut Butter Swirl&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Strawberry&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Raspberry Truffle&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Gadzooks!&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Coffee&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Moose Tracks&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">English Toffee Crunch&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Dark Chocolate Chip&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Double Chocolate&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Pistachio&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Banana&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">WHYY Experience&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Cherry Vanilla&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Butterscotch Vanilla&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Chocolate Chip&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">French Vanilla&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Rum Raisin&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Peach&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Egg Nog&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Gadzooks Blanc&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Pralines and Cream&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Matcha&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Mocha Chip&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Cinnamon&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Vanilla Fudge&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Mango&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Butter Almond&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Irish Coffee&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Macadamia Nut&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Pumpkin&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Raspberry Sorbet&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Mango-Apricot Sorbet&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Lemon Sorbet&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Orange Sorbet&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Vanilla No Sugar Added&lt;/con:entry></row>
+                        <row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">Pomegranate Blueberry Chunk&lt;/con:entry></row>
+                        <recognizeAsPlainText>true</recognizeAsPlainText>
+                    </con:configuration>
+                </con:dataSource>
+                <con:name>Flavors</con:name>
+                <con:property>flavor</con:property>
+            </con:dataSource>
+        </con:dataSources>
+        <con:headerValidator type="NONE"/>
+        <con:restMockAction name="/getFlavor" method="GET" resourcePath="/getFlavor" id="5cc31861-c6d5-4c54-900e-f2cdc78c910a">
+            <con:settings/>
+            <con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+            <con:dispatchConfig/>
+            <con:dispatchPath xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <con:dispatchXPath/>
+            <con:routeScript/>
+            <con:response name="Flavor" id="af0e6fcf-af95-4eef-b9b6-a4d0c9c83221" httpResponseStatus="200" mediaType="application/xml" dataSource="Flavors">
+                <con:settings/>
+                <con:responseContent>&lt;xml>
+                    &lt;flavor>${#MockResponse#flavor}&lt;/flavor>
+                    &lt;/xml></con:responseContent>
+            </con:response>
+        </con:restMockAction>
+    </con:restMockService>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:requirements/>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+    <con:reporting>
+        <con:xmlTemplates/>
+        <con:parameters/>
+    </con:reporting>
+    <con:authRepository/>
+    <con:loadUiTest name="Load Test 1" id="b6c5671e-1882-49cd-bfc0-0c1455ac1f7f">
+        <con:settings>
+            <con:setting id="soapUIObjectSourceId">1651566e-a3c9-4216-837a-157cd1efec12</con:setting>
+            <con:setting id="soapUIObjectSourceType">soapUIObjectSourceType_RestRequest</con:setting>
+        </con:settings>
+        <con1:loadui-project id="25e5d87f-beb3-438c-9193-8fa690b9fd8b" label="Load Test 1" xmlns:con1="http://eviware.com/loadui/config">
+            <con1:properties>
+                <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+                <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
+                <con1:property propagates="true" key="ModelItem.saveReport" type="java.lang.Boolean">false</con1:property>
+                <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
+                <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
+                <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
+                <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">10</con1:property>
+                <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">PerScenario</con1:property>
+                <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
+            </con1:properties>
+            <con1:attributes/>
+            <con1:addons/>
+            <con1:scene label="New Scenario" id="0f80ef31-41a3-4e2c-8d57-f109ecf7953d" version="7">
+                <con1:properties>
+                    <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+                    <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">true</con1:property>
+                    <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
+                    <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
+                    <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">10</con1:property>
+                    <con1:property propagates="true" key="ModelItem.samplerOutputLevel" type="com.eviware.loadui.api.component.SoapUISamplerOutputLevel">TestCaseAndAllTestSteps</con1:property>
+                </con1:properties>
+                <con1:attributes/>
+                <con1:addons/>
+                <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="19e4a2da-bfab-4174-bcd7-bb511384ed1f" category="Scheduler">
+                    <con1:properties>
+                        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+                        <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+                        <con1:property propagates="true" key="startAt" type="java.lang.Long">0</con1:property>
+                        <con1:property propagates="true" key="duration" type="java.lang.Long">5</con1:property>
+                        <con1:property propagates="true" key="unit" type="java.lang.String">Sec</con1:property>
+                        <con1:property propagates="true" key="mode" type="java.lang.String">Single</con1:property>
+                        <con1:property propagates="true" key="defaultMode" type="java.lang.Boolean">true</con1:property>
+                    </con1:properties>
+                    <con1:attributes>
+                        <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Interval</con1:property>
+                    </con1:attributes>
+                    <con1:addons/>
+                </con1:component>
+                <con1:component type="com.eviware.loadui.impl.component.generators.FixedVU" label="Fixed Load 1" id="fedf85a5-70fc-4fc1-adb5-e8e3df489be7" category="Generators">
+                    <con1:properties>
+                        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+                        <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">false</con1:property>
+                        <con1:property propagates="true" key="limitVU" type="java.lang.Long">9223372036854775807</con1:property>
+                        <con1:property propagates="true" key="load" type="java.lang.Long">10</con1:property>
+                        <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
+                    </con1:properties>
+                    <con1:attributes>
+                        <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Fixed Load</con1:property>
+                    </con1:attributes>
+                    <con1:addons/>
+                </con1:component>
+                <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="Ice Cream:Flavors" id="cacf0b68-1195-4b88-9aa3-cbc5c768c96d" category="Runners">
+                    <con1:properties>
+                        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+                        <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
+                        <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
+                        <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
+                        <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
+                        <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
+                        <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
+                        <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">1651566e-a3c9-4216-837a-157cd1efec12</con1:property>
+                        <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
+                        <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
+                        <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
+                        <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
+                        <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
+                        <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
+                    </con1:properties>
+                    <con1:attributes>
+                        <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
+                    </con1:attributes>
+                    <con1:addons/>
+                </con1:component>
+                <con1:connection outputTerminalId="19e4a2da-bfab-4174-bcd7-bb511384ed1f/outgoingTerminal" inputTerminalId="fedf85a5-70fc-4fc1-adb5-e8e3df489be7/stateTerminal"/>
+                <con1:connection outputTerminalId="fedf85a5-70fc-4fc1-adb5-e8e3df489be7/triggerTerminal" inputTerminalId="cacf0b68-1195-4b88-9aa3-cbc5c768c96d/triggerTerminal"/>
+                <con1:connection outputTerminalId="cacf0b68-1195-4b88-9aa3-cbc5c768c96d/runningTerminal" inputTerminalId="fedf85a5-70fc-4fc1-adb5-e8e3df489be7/Sample Count"/>
+            </con1:scene>
+            <con1:statistics>
+                <con1:page title="DefaultLoadUIStatisticPage">
+                    <con1:chartGroup type="com.eviware.loadui.api.statistics.model.chart.line.LineChartView" title="" groupType="Monitors">
+                        <con1:attributes>
+                            <con1:property key="GroupId">1b542650-1464-4844-aaf1-98eaddaabebb</con1:property>
+                        </con1:attributes>
+                    </con1:chartGroup>
+                </con1:page>
+            </con1:statistics>
+        </con1:loadui-project>
+        <con:loadUITestScenario projectId="25e5d87f-beb3-438c-9193-8fa690b9fd8b" scenarioId="0f80ef31-41a3-4e2c-8d57-f109ecf7953d" name="New Scenario" id="8137a1e6-8aa3-4c0e-84b0-52df4d98e06a">
+            <con:settings/>
+        </con:loadUITestScenario>
+        <con:loadUIPanelData id="9c254317-d109-43f5-b2cc-9b5c3a7dd05d">
+            <con:panel>Log</con:panel>
+            <con:data>
+                <con:paramName>column_width@Timestamp</con:paramName>
+                <con:paramValue>84</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@Timestamp</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@ID</con:paramName>
+                <con:paramValue>74</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@ID</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@Status</con:paramName>
+                <con:paramValue>57</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@Status</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@TriggerTimestamp</con:paramName>
+                <con:paramValue>84</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@TriggerTimestamp</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@TimeTaken</con:paramName>
+                <con:paramValue>115</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@TimeTaken</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@_wait_time_</con:paramName>
+                <con:paramValue>106</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@_wait_time_</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@Bytes</con:paramName>
+                <con:paramValue>52</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@Bytes</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@HTTP Status</con:paramName>
+                <con:paramValue>90</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@HTTP Status</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@CurrentlyRunning</con:paramName>
+                <con:paramValue>75</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@CurrentlyRunning</con:paramName>
+                <con:paramValue>true</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@Request</con:paramName>
+                <con:paramValue>67</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@Request</con:paramName>
+                <con:paramValue>false</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_width@Response</con:paramName>
+                <con:paramValue>77</con:paramValue>
+            </con:data>
+            <con:data>
+                <con:paramName>column_visible@Response</con:paramName>
+                <con:paramValue>false</con:paramValue>
+            </con:data>
+        </con:loadUIPanelData>
+        <con:reportParameters/>
+    </con:loadUiTest>
+    <con:tags/>
+</con:soapui-project>
